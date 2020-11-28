@@ -17,6 +17,7 @@ public class VisibilityManager extends Data {
 		start.mainTextPanel.setVisible(false);
 		start.choiceButtonPanel.setVisible(false);
 		start.fundsPanel.setVisible(false);
+		start.endPanel.setVisible(false);
 	}
 	
 	public void titleToMain() {
@@ -27,6 +28,7 @@ public class VisibilityManager extends Data {
 		start.mainTextPanel.setVisible(true);
 		start.choiceButtonPanel.setVisible(true);
 		start.fundsPanel.setVisible(true);
+		start.endPanel.setVisible(false);
 		
 		start.mainTextArea1.append("Name: " + names[r] + "\n"); 
 		start.mainTextArea1.append("\n");
@@ -51,6 +53,7 @@ public class VisibilityManager extends Data {
 		start.mainTextPanel.setVisible(true);
 		start.choiceButtonPanel.setVisible(true);
 		start.fundsPanel.setVisible(true);
+		start.endPanel.setVisible(false);
 		
 		start.mainTextArea1.selectAll();
 		start.mainTextArea1.replaceSelection("");
@@ -80,6 +83,7 @@ public class VisibilityManager extends Data {
 		start.mainTextPanel.setVisible(true);
 		start.choiceButtonPanel.setVisible(true);
 		start.fundsPanel.setVisible(true);
+		start.endPanel.setVisible(false);
 		
 		start.mainTextArea1.selectAll();
 		start.mainTextArea1.replaceSelection("");
@@ -96,6 +100,18 @@ public class VisibilityManager extends Data {
 		
 		start.fundsLabel.setText("Funds: " + Long.toString(this.balance));
 		
+	}
+	
+	public void cashIN() {
+		start.title.setVisible(false);
+		start.buttonPanel.setVisible(false);
+		start.mainTextPanel.setVisible(false);
+		start.choiceButtonPanel.setVisible(false);
+		start.fundsPanel.setVisible(false);
+		start.endPanel.setVisible(true);
+		
+		start.end.setText("You have finished with: £" + Long.toString(this.balance));
+		start.end.append("\nWe hope you have enjoyed our game :)");
 	}
 	
 	

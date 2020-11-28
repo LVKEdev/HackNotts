@@ -31,6 +31,7 @@ public class Game {
 			case "start": vm.titleToMain(); break;
 			case "accept": vm.accept(); break;
 			case "reject": vm.reject(); break;
+			case "cashIn": vm.cashIN(); break;
 			}
 			
 			

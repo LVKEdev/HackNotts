@@ -22,10 +22,10 @@ import bank.Game.ChoiceHandler;
 
 public class Start {
 	JFrame frame;
-	JPanel title, buttonPanel, mainTextPanel, fundsPanel, choiceButtonPanel;
+	JPanel title, buttonPanel, mainTextPanel, fundsPanel, choiceButtonPanel, endPanel;
 	JLabel fundsLabel;
-	JButton accept, reject;
-	JTextArea mainTextArea1, mainTextArea2;
+	JButton accept, reject, cashIn;
+	JTextArea mainTextArea1, mainTextArea2, end;
 	JTextField name, money, credit;
 	Container con;
 	CardLayout cl;
@@ -104,7 +104,7 @@ public class Start {
         choiceButtonPanel = new JPanel();
         choiceButtonPanel.setBounds(250, 350, 300, 150);
         choiceButtonPanel.setBackground(Color.black);
-        choiceButtonPanel.setLayout(new GridLayout(2, 1));
+        choiceButtonPanel.setLayout(new GridLayout(3, 1));
         
 		accept = new JButton("Accept");
 		accept.setBackground(Color.BLACK);
@@ -122,6 +122,14 @@ public class Start {
 		reject.addActionListener(cHandler);
 		reject.setActionCommand("reject");
 	    choiceButtonPanel.add(reject);
+	    cashIn = new JButton("Cash In");
+	    cashIn.setBackground(Color.BLACK);
+	    cashIn.setForeground(Color.WHITE);
+	    cashIn.setFont(buttonFont);
+	    cashIn.setFocusPainted(false);
+	    cashIn.addActionListener(cHandler);
+	    cashIn.setActionCommand("cashIn");
+	    choiceButtonPanel.add(cashIn);
 	    frame.add(choiceButtonPanel);
 	    
 	    fundsPanel = new JPanel();
@@ -135,6 +143,16 @@ public class Start {
 		fundsLabel.setForeground(Color.WHITE);
 		fundsPanel.add(fundsLabel);
 		frame.add(fundsPanel);
+		
+		endPanel = new JPanel();
+		endPanel.setBounds(100, 100, 600, 400);
+		endPanel.setBackground(Color.BLACK);
+		end = new JTextArea();
+		end.setBackground(Color.BLACK);
+		end.setForeground(Color.WHITE);
+		end.setFont(buttonFont);
+		endPanel.add(end);
+		frame.add(endPanel);
 		
 		frame.setVisible(true);
 	}
