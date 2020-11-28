@@ -14,6 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
@@ -25,11 +26,12 @@ public class Start {
 	JLabel fundsLabel;
 	JButton accept, reject;
 	JTextArea mainTextArea1, mainTextArea2;
+	JTextField name, money, credit;
 	Container con;
 	CardLayout cl;
 	Font titleFont = new Font("Times New Roman", Font.PLAIN, 90);
 	Font buttonFont = new Font("Times New Roman", Font.PLAIN, 30);
-	Font smallFont = new Font("Times New Roman", Font.PLAIN, 15);
+	Font smallFont = new Font("Times New Roman", Font.PLAIN, 25);
 	Border border = BorderFactory.createLineBorder(Color.WHITE);
 	
 	
@@ -77,21 +79,23 @@ public class Start {
 		mainTextPanel.setLayout(new GridLayout(1, 2));
 		frame.add(mainTextPanel);
 		
-		mainTextArea1 = new JTextArea("This is the main text area");
+		mainTextArea1 = new JTextArea();
 		mainTextArea1.setBorder(border);
 		mainTextArea1.setBackground(Color.BLACK);
 		mainTextArea1.setForeground(Color.WHITE);
-        mainTextArea1.setFont(smallFont);
+        mainTextArea1.setFont(buttonFont);
         mainTextArea1.setLineWrap(true);
         mainTextArea1.setWrapStyleWord(true);
         mainTextArea1.setEditable(true);
+          
+        
         mainTextPanel.add(mainTextArea1);
         
-        mainTextArea2 = new JTextArea("This is the main text area");
+        mainTextArea2 = new JTextArea();
         mainTextArea2.setBorder(border);
         mainTextArea2.setBackground(Color.BLACK);
         mainTextArea2.setForeground(Color.WHITE);
-        mainTextArea2.setFont(smallFont);
+        mainTextArea2.setFont(buttonFont);
         mainTextArea2.setLineWrap(true);
         mainTextArea2.setWrapStyleWord(true);
         mainTextArea2.setEditable(true);

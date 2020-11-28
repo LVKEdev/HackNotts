@@ -29,8 +29,8 @@ public class Game {
 			
 			switch(yourChoice) {
 			case "start": vm.titleToMain(); break;
-			case "accept":  break;
-			case "reject": break;
+			case "accept": vm.accept(); break;
+			case "reject": vm.reject(); break;
 			}
 			
 			
