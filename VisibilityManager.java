@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class VisibilityManager extends Data {
 	Start start;
-	int balance = 1000;
+	long balance = 10000;
 	
 	public VisibilityManager(Start userInterface) {
 		start = userInterface;
@@ -32,19 +32,19 @@ public class VisibilityManager extends Data {
 		start.mainTextArea1.append("\n");
 		start.mainTextArea1.append("Funds: " + funds[r] + "\n");  
 		start.mainTextArea1.append("\n");
-		start.mainTextArea1.append("Credit " + credit[r] + "\n"); 
+		start.mainTextArea1.append("Credit " + Integer.toString(credit[r]) + "\n");
 		
 		start.mainTextArea2.selectAll();
 		start.mainTextArea2.replaceSelection("");
 		start.mainTextArea2.append(pitch[r]);
 		
-		
-		start.fundsLabel.setText("Funds: " + Integer.toString(balance));
+		start.fundsLabel.setText("Funds: " + Long.toString(this.balance));
 		
 	}
 	
 	public void accept() {
         int r = new Random().nextInt(2+1);
+        int r2 = new Random().nextInt(2+1);
 		
 		start.title.setVisible(false);
 		start.buttonPanel.setVisible(false);
@@ -59,14 +59,16 @@ public class VisibilityManager extends Data {
 		start.mainTextArea1.append("\n");
 		start.mainTextArea1.append("Funds: " + funds[r] + "\n");  
 		start.mainTextArea1.append("\n");
-		start.mainTextArea1.append("Credit " + credit[r] + "\n"); 
+		start.mainTextArea1.append("Credit " + Integer.toString(credit[r]) + "\n");
 		
 		start.mainTextArea2.selectAll();
 		start.mainTextArea2.replaceSelection("");
-		start.mainTextArea2.append(pitch[r]);
+		start.mainTextArea2.append(pitch[r2]);
+		
+		this.balance = calculateBalance(riskiness[r], fundsRequired[r], credit[r]);
 		
 		
-		start.fundsLabel.setText("Funds: " + Integer.toString(balance));
+		start.fundsLabel.setText("Funds: " + Long.toString(this.balance));
 		
 	}
 	
@@ -86,14 +88,33 @@ public class VisibilityManager extends Data {
 		start.mainTextArea1.append("\n");
 		start.mainTextArea1.append("Funds: " + funds[r] + "\n");  
 		start.mainTextArea1.append("\n");
-		start.mainTextArea1.append("Credit " + credit[r] + "\n"); 
+		start.mainTextArea1.append("Credit " + Integer.toString(credit[r]) + "\n"); 
 		
 		start.mainTextArea2.selectAll();
 		start.mainTextArea2.replaceSelection("");
 		start.mainTextArea2.append(pitch[r]);
 		
-		start.fundsLabel.setText("Funds: " + Integer.toString(balance));
+		start.fundsLabel.setText("Funds: " + Long.toString(this.balance));
 		
+	}
+	
+	
+	public long calculateBalance(float riskiness, int fundsRequiredForProject, int creditScore) {
+
+	        long profit = (long)(fundsRequiredForProject+fundsRequiredForProject*riskiness);
+	        float chanceOfFailure = ((1000 - creditScore)/2000f)*riskiness;
+	        System.out.println(chanceOfFailure);
+	        double random = Math.random();
+	        if(random>chanceOfFailure) {
+	            //CODE IF INVESTMENT PAYS OFF
+	            this.balance+=profit;
+	        }else {
+	            //CODE IF INVESTMENT FAILS
+	            this.balance-=fundsRequiredForProject;
+	        }
+	        
+	        return this.balance;
+	    
 	}
 	
 	
