@@ -34,8 +34,35 @@ public class VisibilityManager extends Data {
 		start.mainTextArea1.append("\n");
 		start.mainTextArea1.append("Funds: " + funds[r] + "\n");  
 		start.mainTextArea1.append("\n");
-		start.mainTextArea1.append("Credit " + Integer.toString(credit[r]) + "\n");
-		
+		String creditRating;
+		if (credit[r]==850) {
+			creditRating="(A+)";
+		}else if (credit[r]>800) {
+			creditRating="(A)";
+		}else if (credit[r]>750) {
+			creditRating="(A-)";
+		}else if (credit[r]>700) {
+			creditRating="(B+)";
+		}else if (credit[r]>650) {
+			creditRating="(B)";
+		}else if (credit[r]>600) {
+			creditRating="(B-)";
+		}else if (credit[r]>550) {
+			creditRating="(C+)";
+		}else if (credit[r]>500) {
+			creditRating="(C)";
+		}else if (credit[r]>450) {
+			creditRating="(C-)";
+		}else if (credit[r]>400) {
+			creditRating="(D+)";
+		}else if (credit[r]>350) {
+			creditRating="(D)";
+		}else if (credit[r]>300) {
+			creditRating="(D-)";
+		}else {
+			creditRating="(?)";
+		}
+		start.mainTextArea1.append("Credit " + Integer.toString(credit[r]) + " " + creditRating + "\n");
 		start.mainTextArea2.selectAll();
 		start.mainTextArea2.replaceSelection("");
 		start.mainTextArea2.append(pitch[r]);
@@ -62,7 +89,35 @@ public class VisibilityManager extends Data {
 		start.mainTextArea1.append("\n");
 		start.mainTextArea1.append("Funds: " + funds[r] + "\n");  
 		start.mainTextArea1.append("\n");
-		start.mainTextArea1.append("Credit " + Integer.toString(credit[r]) + "\n");
+		String creditRating;
+		if (credit[r]==850) {
+			creditRating="(A+)";
+		}else if (credit[r]>800) {
+			creditRating="(A)";
+		}else if (credit[r]>750) {
+			creditRating="(A-)";
+		}else if (credit[r]>700) {
+			creditRating="(B+)";
+		}else if (credit[r]>650) {
+			creditRating="(B)";
+		}else if (credit[r]>600) {
+			creditRating="(B-)";
+		}else if (credit[r]>550) {
+			creditRating="(C+)";
+		}else if (credit[r]>500) {
+			creditRating="(C)";
+		}else if (credit[r]>450) {
+			creditRating="(C-)";
+		}else if (credit[r]>400) {
+			creditRating="(D+)";
+		}else if (credit[r]>350) {
+			creditRating="(D)";
+		}else if (credit[r]>300) {
+			creditRating="(D-)";
+		}else {
+			creditRating="(?)";
+		}
+		start.mainTextArea1.append("Credit " + Integer.toString(credit[r]) + " " + creditRating + "\n");
 		
 		start.mainTextArea2.selectAll();
 		start.mainTextArea2.replaceSelection("");
@@ -92,7 +147,35 @@ public class VisibilityManager extends Data {
 		start.mainTextArea1.append("\n");
 		start.mainTextArea1.append("Funds: " + funds[r] + "\n");  
 		start.mainTextArea1.append("\n");
-		start.mainTextArea1.append("Credit " + Integer.toString(credit[r]) + "\n"); 
+		String creditRating;
+		if (credit[r]==850) {
+			creditRating="(A+)";
+		}else if (credit[r]>800) {
+			creditRating="(A)";
+		}else if (credit[r]>750) {
+			creditRating="(A-)";
+		}else if (credit[r]>700) {
+			creditRating="(B+)";
+		}else if (credit[r]>650) {
+			creditRating="(B)";
+		}else if (credit[r]>600) {
+			creditRating="(B-)";
+		}else if (credit[r]>550) {
+			creditRating="(C+)";
+		}else if (credit[r]>500) {
+			creditRating="(C)";
+		}else if (credit[r]>450) {
+			creditRating="(C-)";
+		}else if (credit[r]>400) {
+			creditRating="(D+)";
+		}else if (credit[r]>350) {
+			creditRating="(D)";
+		}else if (credit[r]>300) {
+			creditRating="(D-)";
+		}else {
+			creditRating="(?)";
+		}
+		start.mainTextArea1.append("Credit " + Integer.toString(credit[r]) + " " + creditRating + "\n");
 		
 		start.mainTextArea2.selectAll();
 		start.mainTextArea2.replaceSelection("");
@@ -110,7 +193,7 @@ public class VisibilityManager extends Data {
 		start.fundsPanel.setVisible(false);
 		start.endPanel.setVisible(true);
 		
-		start.end.setText("You have finished with: £" + Long.toString(this.balance));
+		start.end.setText("You have finished with: ≈Å" + Long.toString(this.balance));
 		start.end.append("\nWe hope you have enjoyed our game :)");
 	}
 	
